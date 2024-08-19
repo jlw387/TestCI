@@ -1,5 +1,5 @@
 import pytest
-from main import *
+from main.main import *
 
 def test_type_checking():
     type_check_test_inputs_fail = [None, "String", True, [], {}, (0,0), "1"]
