@@ -55,13 +55,13 @@ def test_times_two():
         f"Returned Result: {times_two(test_case[0])}  " \
         f"Expected Result: {test_case[1]}"
 
-def test_intentionally_fails():
-    assert True == False, "Intentional test fail for checking CI behavior"
+def test_changed_for_success():
+    assert True == True, "This test should never fail"
 
 if __name__ == "__main__":
     test_type_checking()
     test_add_one()
     test_times_two()
-    test_intentionally_fails()
+    test_changed_for_success()
 
     
