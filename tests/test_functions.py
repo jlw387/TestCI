@@ -105,6 +105,32 @@ def test_zero():
         f"Returned Result: {zero(test_case[0])}  " \
         f"Expected Result: {test_case[1]}"
 
+def test_identity():
+    identity_test_cases = [(1, 1), 
+                        (2, 2), 
+                        (5, 5),
+                        (10, 10), 
+                        (-1, -1),
+                        (0, 0),
+                        (393, 393), 
+                        (100000, 100000),
+                        (1.5, 1.5),
+                        (2.5, 2.5),
+                        (8, 8),
+                        ("", ""),
+                        (None, None),
+                        ("one", "one"),
+                        ([], []),
+                        ({}, {}),
+                        (True, True),
+                        ((0,0), (0,0))]
+    
+    for test_case in identity_test_cases:
+        assert identity(test_case[0]) == test_case[1], \
+        f"Unexpected Result for Identity Test; Input: {test_case[0]}  " + \
+        f"Returned Result: {identity(test_case[0])}  " \
+        f"Expected Result: {test_case[1]}"
+
 def test_changed_for_success():
     assert True == True, "This test should never fail"
 
@@ -113,6 +139,7 @@ if __name__ == "__main__":
     test_add_one()
     test_times_two()
     test_zero()
+    test_identity()
     test_changed_for_success()
 
     
