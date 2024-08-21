@@ -61,16 +61,16 @@ def test_times_two():
 
 def test_cube():
     cube_test_cases = [(1, 1), 
-                            (2, 8), 
-                            (5, 125),
-                            (10, 1000), 
-                            (-1, -1),
-                            (0, 0),
-                            (393, 60698457), 
-                            (100000, 1000000000000000),
-                            (1.5, 3.375),
-                            (2.5, 15.625),
-                            (8, 512)]
+                        (2, 8), 
+                        (5, 125),
+                        (10, 1000), 
+                        (-1, -1),
+                        (0, 0),
+                        (393, 60698457), 
+                        (100000, 1000000000000000),
+                        (1.5, 3.375),
+                        (2.5, 15.625),
+                        (8, 512)]
 
     for test_case in cube_test_cases:
         assert cube(test_case[0]) == test_case[1], \
@@ -79,6 +79,58 @@ def test_cube():
         f"Expected Result: {test_case[1]}"
 
 
+def test_zero():
+    zero_test_cases = [(1, 0), 
+                        (2, 0), 
+                        (5, 0),
+                        (10, 0), 
+                        (-1, 0),
+                        (0, 0),
+                        (393, 0), 
+                        (100000, 0),
+                        (1.5, 0),
+                        (2.5, 0),
+                        (8, 0),
+                        ("", 0),
+                        (None, 0),
+                        ("one", 0),
+                        ([], 0),
+                        ({}, 0),
+                        (True, 0),
+                        ((0,0), 0)]
+    
+    for test_case in zero_test_cases:
+        assert zero(test_case[0]) == test_case[1], \
+        f"Unexpected Result for Zero Test; Input: {test_case[0]}  " + \
+        f"Returned Result: {zero(test_case[0])}  " \
+        f"Expected Result: {test_case[1]}"
+
+def test_identity():
+    identity_test_cases = [(1, 1), 
+                        (2, 2), 
+                        (5, 5),
+                        (10, 10), 
+                        (-1, -1),
+                        (0, 0),
+                        (393, 393), 
+                        (100000, 100000),
+                        (1.5, 1.5),
+                        (2.5, 2.5),
+                        (8, 8),
+                        ("", ""),
+                        (None, None),
+                        ("one", "one"),
+                        ([], []),
+                        ({}, {}),
+                        (True, True),
+                        ((0,0), (0,0))]
+    
+    for test_case in identity_test_cases:
+        assert identity(test_case[0]) == test_case[1], \
+        f"Unexpected Result for Identity Test; Input: {test_case[0]}  " + \
+        f"Returned Result: {identity(test_case[0])}  " \
+        f"Expected Result: {test_case[1]}"
+
 def test_changed_for_success():
     assert True == True, "This test should never fail"
 
@@ -86,6 +138,8 @@ if __name__ == "__main__":
     test_type_checking()
     test_add_one()
     test_times_two()
+    test_zero()
+    test_identity()
     test_changed_for_success()
 
     
