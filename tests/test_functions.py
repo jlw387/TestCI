@@ -79,13 +79,13 @@ def test_cube():
         f"Expected Result: {test_case[1]}"
 
 
-def test_changed_for_success():
-    assert True == True, "This test should never fail"
+def test_changed_for_failure():
+    assert False, "This test should always fail"
 
 if __name__ == "__main__":
     test_type_checking()
     test_add_one()
     test_times_two()
-    test_changed_for_success()
+    test_changed_for_failure()
 
     
