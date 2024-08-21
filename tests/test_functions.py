@@ -11,11 +11,15 @@ def test_type_checking():
         with pytest.raises(TypeError, match='Must enter a number.'):
             times_two(test_input)
 
+        with pytest.raises(TypeError, match='Must enter a number.'):
+            cube(test_input)
+
     type_check_test_inputs_succeed = [1, 3, 2.5, -1, -12, 0, 100000]
 
     for test_input in type_check_test_inputs_succeed:
         add_one(test_input)
         times_two(test_input)
+        cube(test_input)
 
 def test_add_one():
 
@@ -54,6 +58,26 @@ def test_times_two():
         f"Unexpected Result for Times Two Test; Input: {test_case[0]}  " + \
         f"Returned Result: {times_two(test_case[0])}  " \
         f"Expected Result: {test_case[1]}"
+
+def test_cube():
+    cube_test_cases = [(1, 1), 
+                            (2, 8), 
+                            (5, 125),
+                            (10, 1000), 
+                            (-1, -1),
+                            (0, 0),
+                            (393, 60698457), 
+                            (100000, 1000000000000000),
+                            (1.5, 3.375),
+                            (2.5, 15.625),
+                            (8, 512)]
+
+    for test_case in cube_test_cases:
+        assert cube(test_case[0]) == test_case[1], \
+        f"Unexpected Result for Cube Test; Input: {test_case[0]}  " + \
+        f"Returned Result: {cube(test_case[0])}  " \
+        f"Expected Result: {test_case[1]}"
+
 
 def test_changed_for_success():
     assert True == True, "This test should never fail"
