@@ -19,6 +19,9 @@ def cube(number):
 def zero(number):
     return 0
 
+def identity(number):
+    return number
+
 if __name__ == "__main__":
     print("Starting up program...\n")
 
