@@ -31,4 +31,6 @@ if __name__ == "__main__":
     print("Four zeroed is:", zero(4))
     
     print("\nThank you for running this program!")
+
+    print("Severe Bug:", 1/0)
     
