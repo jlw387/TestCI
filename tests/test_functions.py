@@ -138,6 +138,7 @@ if __name__ == "__main__":
     test_type_checking()
     test_add_one()
     test_times_two()
+    test_cube()
     test_zero()
     test_identity()
     test_changed_for_success()
