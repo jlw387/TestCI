@@ -23,6 +23,7 @@ def identity(number):
     return number
 
 if __name__ == "__main__":
+    # Woah comment
     print("Starting up program...\n")
 
     print("One plus one is:  ", add_one(1))
@@ -32,4 +33,5 @@ if __name__ == "__main__":
     print("Five is:          ", identity(5))
     
     print("\nThank you for running this program!")
+
     
