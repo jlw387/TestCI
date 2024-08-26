@@ -34,9 +34,5 @@ if __name__ == "__main__":
     
     print("\nThank you for running this program!")
 
-<<<<<<< HEAD
     # Comment added to test feature branch workflow
     
-=======
-    
->>>>>>> development
